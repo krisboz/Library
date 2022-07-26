@@ -25,3 +25,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.readCheck {
+
+    width: 75px;
+    height: 32px;
+}

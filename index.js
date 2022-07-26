@@ -21,7 +21,15 @@ class Book{
     }
 }
 
-const updateDOM = () => {
+const changeReadColor = (el) => {
+    if (el) {
+        return "green"
+    } else if (!el) {
+        return "red"
+    }
+}
+
+const displayBooks = () => {
     document.querySelector(".displayed-books").innerHTML = "";
 
 
@@ -31,7 +39,7 @@ const updateDOM = () => {
         <h5 class="name">${el.title}</h5>
         <p class="author">${el.author}</p>
         <p class="pages">${el.pages}</p>
-        <p class="read">${el.read}</p>
+        <div class="readCheck" style="background-color:${changeReadColor(el.read)};"> </div>
         <button class="delete-book"> Delete </button>
     </div>`)
     });
@@ -48,7 +56,7 @@ const addBookToLibrary = () => {
 
     console.log(myLibrary)
 
-    updateDOM();
+    displayBooks();
 
 }
 
@@ -57,25 +65,23 @@ const deleteBook = (e) => {
     if (e.target.classList.contains("delete-book")) {
         console.log(myLibrary[e.target.parentNode.dataset.index])
         myLibrary.splice(e.target.parentNode.dataset.index, 1)
-        updateDOM();
+        displayBooks();
     }
 }
 
+const test = (e) =>{
+    if(e.target.classList.contains("readCheck")) {
+        myLibrary[e.target.parentNode.dataset.index].changeReadStatus();
+        console.log("i dalje radim")
+        displayBooks();
+    }
+}
 document.getElementById("submitBtn").addEventListener("click", addBookToLibrary)
 document.querySelector(".displayed-books").addEventListener("click", e => {
     deleteBook(e)
+    test(e)
 })
 
-
-class Example extends Book {
-    constructor(title) {
-        super(title)
-    }
-
-    smallInfo() {
-        return ([this.title, "I'm a schmall one"])
-    }
-}
 
 
 const openForm = () =>{
@@ -86,12 +92,6 @@ const closeForm = () => {
     document.querySelector(".user-input").style.display = "none"
 
 }
-
-const lotr = new Book("Lord of the rings", "J.R.R. Tolkien", 654, false)
-const bs = new Example("The Stormlight Archives")
-//console.log(lotr.info())
-//console.log(bs.smallInfo())
-//console.log(bs.info())
 
 
 
