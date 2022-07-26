@@ -1,0 +1,27 @@
+.user-input {
+    display: none;
+    border: 1px solid black;
+    width: fit-content;
+    background-color: white;
+    padding: 15px;
+    position: absolute;
+    bottom: 50%;
+    right: 50% ;
+    z-index: 9;
+}
+
+.displayed-books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.book {
+    border: 1px solid black;
+    width: 33%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

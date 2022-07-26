@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h5>Fucked up Library</h5>
+
+    <button class="add-book" onclick="openForm()">Add Book</button>
+    
+    <div class="user-input">
+
+        <label for="title">Title</label>          <button class="close" onclick="closeForm()"> X </button><br>
+        <input type="text" id="title">
+       <br> <label for="author">Author</label> <br>
+        <input type="text" id="author">
+      <br>  <label for="pages">Pages</label> <br>
+        <input type="number" name="" id="pages">
+        <br><label for="read">Read</label><br>
+        <input type="checkbox" name="" id="read">
+        <br><button id="submitBtn" type="submit">Submit</button> <br>
+    </div>
+
+    <div class="displayed-books">
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
