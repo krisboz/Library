@@ -10,20 +10,23 @@
 <body>
     <h5>Fucked up Library</h5>
 
-    <button class="add-book" onclick="openForm()">Add Book</button>
+    <button class="add-book">Add Book</button>
     
     <div class="user-input">
 
-        <label for="title">Title</label>          <button class="close" onclick="closeForm()"> X </button><br>
-        <input type="text" id="title">
+        <form  id="form-test">
+        <label for="title">Title</label>          <button class="close" type="button"> X </button><br>
+        <input type="text" id="title" class="form-element"required/>
        <br> <label for="author">Author</label> <br>
-        <input type="text" id="author">
+        <input type="text" id="author"  class="form-element" required/>
       <br>  <label for="pages">Pages</label> <br>
-        <input type="number" name="" id="pages">
+        <input type="number" name="" id="pages" class="form-element" required/>
         <br><label for="read">Read</label><br>
-        <input type="checkbox" name="" id="read">
-        <br><button id="submitBtn" type="submit">Submit</button> <br>
+        <input type="checkbox" name="" id="read"/>
+        <br><button id="submitBtn"  type="button" onclick="submitFunction()">Submit</button> <br>
+    </form>
     </div>
+
 
     <div class="displayed-books">
 

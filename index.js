@@ -28,6 +28,14 @@ const changeReadColor = (el) => {
         return "red"
     }
 }
+const openForm = () =>{
+    document.querySelector(".user-input").style.display = "block"
+}
+
+const closeForm = () => {
+    document.querySelector(".user-input").style.display = "none"
+
+}
 
 const displayBooks = () => {
     document.querySelector(".displayed-books").innerHTML = "";
@@ -47,6 +55,7 @@ const displayBooks = () => {
 
 
 const addBookToLibrary = () => {
+
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
@@ -57,7 +66,7 @@ const addBookToLibrary = () => {
     console.log(myLibrary)
 
     displayBooks();
-
+    closeForm()
 }
 
 const deleteBook = (e) => {
@@ -76,7 +85,20 @@ const test = (e) =>{
         displayBooks();
     }
 }
-document.getElementById("submitBtn").addEventListener("click", addBookToLibrary)
+     
+function submitFunction() {
+    const inpForm = document.getElementById("form-test")
+    const author = document.getElementById("author")
+    if(!inpForm.checkValidity()) {
+        console.log(        author.validationMessage)
+
+    } else {
+        console.log("valid")
+        addBookToLibrary()
+    }
+
+}
+
 document.querySelector(".displayed-books").addEventListener("click", e => {
     deleteBook(e)
     test(e)
@@ -84,14 +106,17 @@ document.querySelector(".displayed-books").addEventListener("click", e => {
 
 
 
-const openForm = () =>{
-    document.querySelector(".user-input").style.display = "block"
-}
 
-const closeForm = () => {
-    document.querySelector(".user-input").style.display = "none"
 
-}
+
+document.querySelector(".add-book").addEventListener("click", (e=>{openForm()}))
+document.querySelector(".close").addEventListener("click", (e=>{closeForm()}))
+
+
+
+
+
+
 
 
 

@@ -1,8 +1,13 @@
+body {
+    background-color: black;
+    color: white;
+}
 .user-input {
     display: none;
-    border: 1px solid black;
+    border: 1px solid white;
     width: fit-content;
-    background-color: white;
+    background-color: black;
+    color: white;
     padding: 15px;
     position: absolute;
     bottom: 50%;
@@ -27,7 +32,10 @@
 }
 
 .readCheck {
-
     width: 75px;
     height: 32px;
+}
+
+.form-element:invalid {
+    border: 1px solid red;
 }
